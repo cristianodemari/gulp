@@ -1,0 +1,22 @@
+.icon {
+  background-image: url('{{{spritesheet.image}}}');
+}
+@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+{{#each retina_groups}}
+  .icon {
+    background-image: url('{{{retina.escaped_image}}}');
+  }
+{{/each}}
+}
+{{#items}}
+@mixin icon-{{name}} {
+  &{{pseudoClass}}::before {
+    background-image: url('{{{escaped_image}}}');
+    background-position: {{px.offset_x}} {{px.offset_y}};
+    content: '';
+    display: inline-block;
+    height: {{px.height}};
+    width: {{px.width}};
+  }
+}
+{{/items}}

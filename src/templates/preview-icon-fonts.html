@@ -1,0 +1,25 @@
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="./css/font-icon.css">
+  <style>
+    ul {
+      display: block;
+      list-style-type: none;
+      margin: 1em 0;
+      padding-left: 0px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <p>This a gulp-iconfont and gulp-iconfont-css example for the testing purpose of converting svg to iconfont.</p>
+    <p>Add svg icons to /src/icons/svg folder will automated generate the iconfont and put it on page.</p>
+  </div>
+  <ul>
+    <% _.forEach(icons, function(icon) { %><li><i class="icon-<%- icon %>"></i></li><% }); %>
+  </ul>
+</body>
+
+</html>
