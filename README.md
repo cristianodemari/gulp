@@ -58,7 +58,14 @@ The SASSLINT settings are being provided by the __.scss-lint.yml__ file.
 const scsslint = require('./gulp/scsslint');
 /*
 scsslint (
-  #1 Source js files
+  #1 Source js files,
+  #2 config object
+    {
+      options: {
+        ...
+      },
+      configFile: _d('.scss-lint.yml')
+    }
 );
 */
 exports.scsslint = scsslint(...);

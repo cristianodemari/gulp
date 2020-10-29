@@ -19,7 +19,7 @@ exports.iconfont = iconfont(
   _d('src/icons/svg/*.svg'),
   _d('assets/fonts'),
   _d('src/templates/font-icon.template'),
-  _d('src/scss/font-icon.scss'),
+  './../../src/scss/font-icon.scss', //relative from assets/fonts
   './../fonts/' //relative from the css file
 );
 
@@ -70,7 +70,11 @@ exports.eslint = eslint(
 );
 
 exports.scsslint = scsslint(
-  _d('src/scss/**/*.scss')
+  _d('src/scss/**/*.scss'),
+  {
+    options: {},
+    configFile: config
+  }
 );
 
 // watch files
@@ -92,15 +96,6 @@ exports.watch = () => {
     exports.scss)
   );
 
-  watch('src/scss/**/*.scss', series(
-    exports.template,
-    exports.iconfont,
-    exports.iconfontcss,
-    parallel(
-      exports.scss,
-      exports.scssbuild
-    ))
-  )
 }
 
 // Default task
