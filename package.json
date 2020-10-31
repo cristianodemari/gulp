@@ -5,6 +5,10 @@
   "repository": "git@github.com:cristianodemari/gulp.git",
   "author": "Cristiano Demari <github@cristianodemari.com.br>",
   "license": "MIT",
+  "scripts": {
+    "server": "python3 -m http.server 80 --bind 127.0.0.1",
+    "php": "php -S localhost:80"
+  },
   "devDependencies": {
     "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
